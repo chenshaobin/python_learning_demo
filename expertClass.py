@@ -36,7 +36,8 @@ class Student1(object):
             # 分数值范围限制
             raise ValueError('score must between 0~100')
         self._score = value
-stu1 =Student1()
+
+stu1 = Student1()
 stu1.set_score(96)
 # print('stu1.get_score:',stu1.get_score())
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
+from functools import reduce
+
 """
 names = ['Michael', 'Bob', 'Ethan']
 for name in names:
@@ -182,12 +184,13 @@ for key, v in d.items():
     print(key + ':' + str(v))
 """
 
-def findMinAndMax(L):
-    if len(L) == 0:
-        return None, None
-    max = min =L[0]
+
+def findMinAndMax(l):
+    if len(l) == 0:
+        return (None, None)
+    max = min = l[0]
     for i in L:
-        if isinstance(i,int or float):
+        if isinstance(i, int or float):
             if i > max:
                 max = i
             elif i < min:
@@ -212,10 +215,11 @@ g = (x * x for x in range(10))
 # print((x * x for x in g))
 # print(next(g))
 
+
 def printgenerator():
     g = (x * x for x in range(10))
     for n in g:
-        print('值',n)
+        print('值', n)
 
 # print(printgenerator())
 
@@ -244,7 +248,8 @@ r = map(f, [1,2,3,4,5,6])
 # print(r)
 # print(list(r))
 
-from functools import reduce
+
+
 def add(x, y):
     return x +y
 
@@ -280,11 +285,13 @@ def count():
 
 
 def createCounter():
-    i =[0]
+    i = [0]
+
     def counter():
         i[0]+=1
         return i[0]
     return counter
+
 
 def test_createCounter():
     counterA = createCounter()
@@ -298,3 +305,6 @@ def test_createCounter():
 # print(test_createCounter())
 
 
+class Hello(object):
+    def hello(self, name='world'):
+        print('Hello, %s.' % name)

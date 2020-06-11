@@ -4,11 +4,13 @@ from functools import reduce
 DIGITS = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
 
 def str2int(s):
-    def fn(x,y):
+    def fn(x, y):
         return x * 10 + y
-    def char2num(s):
+
+    def char2num2(s):
         return DIGITS[s]
-    return reduce(fn,map(char2num,s))
+
+    return reduce(fn, map(char2num2, s))
 
 # print('将字符串123456转整数',str2int('123456'))
 
@@ -17,14 +19,14 @@ def char2num(s):
     return DIGITS[s]
 
 def str2intdemo2(s):
-    return reduce(lambda x ,y :x* 10 + y,map(char2num,s))
+    return reduce(lambda x, y: x * 10 + y, map(char2num, s))
 
 # print('将字符串123456转整数',str2intdemo2('123456'))
 
 
 def normlize(name):
     # 利用map()函数，把用户输入的不规范的英文名字，变为首字母大写，其他小写的规范名字
-    if not isinstance(name,str):
+    if not isinstance(name, str):
         raise TypeError("please enter a String")
     return name[0].upper() + name[1:].lower()
 
