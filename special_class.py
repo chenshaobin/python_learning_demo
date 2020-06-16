@@ -13,7 +13,7 @@ class Student(object):
     __repr__ = __str__  # __repr__是为调试服务的
 
     def __getattr__(self, attr):
-        # 当调用不存在的属性时，就会试图调用该函数获取属性
+        # 当调用类的不存在的属性或者方法时，就会试图调用该函数获取属性
         if attr == 'score':
             return 99
         if attr == 'age':

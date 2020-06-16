@@ -7,7 +7,8 @@ from types import MethodType
 
 class Student(object):
     __slots__ = ('name', 'age', 'score', 'set_age',)
-    def __init__(self,name):
+
+    def __init__(self, name):
         self.name = name
 
 s = Student('Ethan')
